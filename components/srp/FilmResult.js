@@ -10,16 +10,15 @@ var Home = React.createClass({
     render: function() {
         return (
             <div className="streamel-search-item no-link">
+                <div className="streamel-search-item-content">
+                    <div className="streamel-search-item-poster" style={{backgroundImage: "url(" + this.props.poster + ")"}}></div>
+                    <div className="streamel-search-item-text">
+                        <h1>{this.props.title}</h1>
+                        <p>{this.props.description}</p>
+                    </div>
+                </div>
                 <div className="streamel-search-item-thumbnail" style={{backgroundImage: "url(" + this.props.thumbnail + ")"}}>
                     <div className="streamel-search-item-thumbnail-overlay"></div>
-                </div>
-
-                <div className="streamel-search-item-poster" style={{backgroundImage: "url(" + this.props.poster + ")"}}></div>
-                <div className="streamel-search-item-title">
-                    <h1>{this.props.title}</h1>
-                </div>
-                <div className="streamel-search-item-description">
-                    {this.props.description}
                 </div>
             </div>
         );
