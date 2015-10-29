@@ -24,7 +24,7 @@ var debug = debugLib('fluxible-template');
 /* Regeister Services */
 app.getPlugin('FetchrPlugin').registerService(require('./services/SearchService'));
 app.getPlugin('FetchrPlugin').registerService(require('./services/SeriesService'));
-
+app.getPlugin('FetchrPlugin').registerService(require('./services/RecommendedService'));
 
 var server = express();
 server.use('/public', express.static(path.join(__dirname, '/public')));

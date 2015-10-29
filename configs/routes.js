@@ -4,7 +4,8 @@ module.exports = {
         method: 'get',
         page: 'home',
         title: 'Home',
-        handler: require('../components/home/Home')
+        handler: require('../components/home/Home'),
+        action: require('../actions/search/getRecommendedContentAction')
     },
     upload: {
         path: '/upload',

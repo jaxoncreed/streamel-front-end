@@ -1,36 +1,39 @@
 var React = require('react');
-
-var Home = React.createClass({
-    render: function() {
-        return (
-            <div className="streamel-home-content">
-                <div className="streamel-home-text">
-                    <h1>The Streaming Channel!</h1>
-                    <p>Eventually, when we actually have content...</p>
-                </div>
-            </div>
-        );
-    }
-});
-
-module.exports = Home;
-
-/*var React = require('react');
 var FilmResult = require('../srp/FilmResult');
+var MainStore = require('../../stores/MainStore');
+var connectToStores = require('fluxible-addons-react').connectToStores;
+var NavLink = require('fluxible-router').NavLink;
 
 var Home = React.createClass({
     render: function() {
         return (
-            <div className="streamel-home-content">
-                <div className="streamel-home-banner">
-        
-                </div>
-                <FilmResult title="The Most Awesome Film" description="Lorem ipsum dolor sit amet, ei sed falli dissentiet, vis mollis patrioque id, ne diam sapientem dissentias nam. Fierent detraxit expetenda nec id. Est ea homero cetero verear, ad detracto salutandi nam, ad has sanctus maluisset. Ne iisque nominati sententiae eum, atqui munere maiestatis an vix. Ex eam iudico causae eripuit, ne wisi idque verterem sed, mel at tempor suscipit. Ad cum veri numquam intellegat."
-                    poster="http://images4.fanpop.com/image/photos/15000000/Star-Trek-Movie-Poster-2-zoe-saldana-15090375-800-1182.jpg"
-                    thumbnail="http://nerdreactor.com/wp-content/uploads/2015/08/heart-of-america-movie-poster.jpg" />
+            <div>
+                <div className="streamel-home-banner"></div>
+                <a className="no-link" href="https://docs.google.com/forms/d/1gFqHz9cvUOQq2Hy503KbH8cXMZa4vnKJnpo9nwK-jKo/viewform?usp=send_form" target="_blank">
+                    <div className="streamel-home-center-button">Submit your Content</div>
+                </a>
+                <h1 className="center-sizing padding">Recommended Videos</h1>
+                <hr className= "center-sizing"/>
+                {this.props.recommended.map(function(result) { return (
+                    <NavLink href={"/watch?id=" + result.film.id} className="no-link">
+                        <FilmResult title={result.name} 
+                            description={result.description} 
+                            poster={result.film.poster}
+                            thumbnail={result.film.thumbnail} /> 
+                    </NavLink>
+                )})}
             </div>
         );
     }
 });
 
-module.exports = Home;*/
+module.exports = connectToStores(
+    Home,
+    [MainStore],
+    function(context, props) {
+        var store = context.getStore(MainStore);
+        return {
+            recommended: store.getRecommended()
+        }
+    }
+);

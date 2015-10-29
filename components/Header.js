@@ -10,13 +10,13 @@ var Header = React.createClass({
             <header className="streamel-header no-link">
                 <div className="streamel-header-item">
                     <NavLink href="/">
-                        <h1>Streamel</h1>
+                        <img src="/public/images/logo.png" />
                     </NavLink>
                 </div>
-                <div className="streamel-header-item streamel-header-item-searchbar">
+                {/*<div className="streamel-header-item streamel-header-item-searchbar">
                     <SearchBar className="searchBar" />
                 </div>
-                {/*<nav className="streamel-header-item">
+                <nav className="streamel-header-item">
                     <CircleButton action={NavigateAction} payload={{method:"GET", url:"/resume"}} actionId="NavigateBlog">
                         Resume
                     </CircleButton>

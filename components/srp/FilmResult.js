@@ -12,7 +12,7 @@ var Home = React.createClass({
             <div className="streamel-search-item">
                 <div className="streamel-search-item-content">
                     <div className="streamel-search-item-poster" style={{backgroundImage: "url(" + this.props.poster + ")"}}></div>
-                    <div className="streamel-search-item-text no-link">
+                    <div className="streamel-search-item-text">
                         <h1>{this.props.title}</h1>
                         <p>{this.props.description}</p>
                     </div>

@@ -2,17 +2,15 @@ var request = require('superagent');
 var route = require('../configs/externalRoutes.json').streamelApi;
 
 module.exports = {
-    name: "series",
+    name: "recommended",
     read: function(req, resource, params, config, callback) {
-        console.log(params.id);
         request
-            .get(route + '/film/' + params.id)
+            .get(route + '/meta')
             .end(function(err, res) {
                 if (err) {
                     // TODO: Handle error
-                    console.log("error in series service");
+                    console.log("error in search service");
                     console.log(err);
-                    callback("Error");
                 } else {
                     callback(null, res.body);
                 }

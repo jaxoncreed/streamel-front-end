@@ -12,7 +12,7 @@ module.exports = function(context, payload, callback) {
             console.log("Success on get series action");
             console.log(results);
             payload.results = results;
-            context.dispatch("SERIES_CHANGED", results);
+            context.dispatch("VIDEO_CHANGED", results);
             callback();
         }
     });

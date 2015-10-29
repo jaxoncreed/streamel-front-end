@@ -19,6 +19,7 @@ app.registerStore(require('./stores/RouteStore'));
 app.registerStore(require('./stores/ApplicationStore'));
 app.registerStore(require('./stores/SearchStore'));
 app.registerStore(require('./stores/SeriesStore'));
+app.registerStore(require('./stores/MainStore'));
 
 //app.registerStore(actionMonitor.actionMonitorStore);
 
