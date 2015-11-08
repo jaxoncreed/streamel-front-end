@@ -5,6 +5,7 @@ html {
     height: 100%; 
     margin: 0px; 
     padding: 0px;
+    overflow: hidden;
 }
 body {
     height: 100%;
@@ -13,6 +14,10 @@ body {
     background-color: #111;
     -webkit-appearance:none;
     font-family: 'Open Sans', sans-serif;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 h1 {
     font-weight: 300;
@@ -34,7 +39,7 @@ h1 {
 .streamel-site-container {
     position: relative;
     bottom 0px;
-    background-color: #DDD;
+    background-color: #F7F7F7;
 }
 
 /* Header */
@@ -45,6 +50,7 @@ h1 {
     z-index: 100;
 	display: flex;
     justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .streamel-header-item {
     height: 100%;
@@ -60,7 +66,6 @@ h1 {
 .streamel-content {
     position: relative;
     min-height: 100%;
-    overflow: hidden;
 }
 
 /* Footer */
@@ -75,6 +80,7 @@ h1 {
     padding: 30px;
     color: #EEE;
     z-index: 100;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Search Bar */
@@ -84,147 +90,96 @@ h1 {
 }
 
 /* Home */
-.streamel-home-banner {
+
+
+
+
+/* ContentView Menu */
+
+.streamel-cv-container {
     position: relative;
-    height: 300px;
-    background-image: url('/public/images/backdrop.png');
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-position: center;
 }
-.streamel-home-center-button {
+
+.streamel-cv-menu {
     position: relative;
-    background-color: #6495ED;
-    height: 50px;
-    padding-left: 25px;
-    padding-right: 25px;
-    border-radius: 25px;
+    background-color: #FFF;
+    height: 250px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.streamel-cv-menu-content {
+    position: relative;
+    max-width: 1200px;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
-    width: 200px;
-    text-align: center;
-    padding: 14px;
-    box-sizing: border-box;
-    margin-top: 30px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    color: #FFF;
-    transition: all 0.1s ease-in;
-    cursor: pointer;
-}
-.streamel-home-center-button:hover {
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* Search */
-.streamel-search-content {
-    position: relative;
-    min-height: 700px;
-    padding: 20px;
-}
-
-.streamel-search-item {
-    background-color: #FFF;
-    position: relative;
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    max-width: 1200px;
-    height: 250px;
-    padding-left: 125px;
-    border-radius: 125px;
-    box-sizing: border-box;
-    color: #000;
-    cursor: pointer;
-    transition: all 0.1s ease-in;
-    transition-property: color, background-color;
-    background-size: contain;
-    overflow: hidden;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    transition: box-shadow 0.3s;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    z-index: 0;
+    overflow: hidden;
 }
-.streamel-search-item:hover {
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
-}
+/*.streamel-cv-menu-content:before {
+    background-image: url("http://lorempixel.com/output/abstract-q-c-640-480-4.jpg");
+    transform: translateZ(-1px) scale(2);
+    z-index:5;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+}*/
 
-.streamel-search-item-thumbnail {
-    position: relative;
-    height: 250px;
-    width: 445px;
-    background-size: cover;
-    flex-shrink: 0;
-    z-index: 3;
-}
-.streamel-search-item-thumbnail-overlay {
+.streamel-cv-menu-background {
     position: absolute;
     top: 0px;
     bottom: 0px;
-    right: 0px;
     left: 0px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.85), rgba(255,255,255, 0.5), rgba(255,255,255,0.25), rgba(255, 255, 255, 0))
-}
-
-.streamel-search-item-content {
-    display: flex;
-    align-items: center;
-    z-index:4;
-}
-.streamel-search-item-poster {
-    height: 210px;
-    width: 142px;
-    border-radius: 5px;
-    flex-shrink: 0;
+    right: 0px;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
-    z-index: 3;
+    z-index: 0;
+    transform: translateZ(-1px);
 }
 
-.streamel-search-item-text {
-    padding-left: 20px;
-    height: 250px;
-    flex-grow: 1;
-    box-sizing: border-box;
+.streamel-cv-menu-background-overlay {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1.0), rgba(255, 255, 255, 0.85), rgba(255,255,255, 0.85), rgba(255,255,255,0.85), rgba(255,255,255,1.0)); 
+    z-index: 1;
 }
 
-@media screen and (max-width: 800px) {
-    /* Header */
-    .streamel-header-item-searchbar {
-        position: absolute;
-        right: 0px;
-        left: 0px;
-        bottom: 0px;
-        height: 45px;
-        padding: 0px;
-    }
-    .streamel-search-bar {
-        border-radius: 0px !important;
-        margin: 0px !important;
-        width: 100% !important;
-    }
-    /*.streamel-header {
-        height: 115px;
-    }*/
-
-    /* SRP */
-    .streamel-search-content {
-        padding-right: 0px;
-        padding-left: 0px;
-    }
-    .streamel-search-item {
-        border-radius: 0px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .streamel-search-item-poster {
-        display: none;
-    }
-    .streamel-search-item-thumbnail {
-        display: none;
-    }
-
+.streamel-cv-menu-poster {
+    background-color: red;
+    height: 230px;
+    margin: 10px;
+    width: 152px;
+    z-index: 2;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin-right: 20px;
+    flex-shrink: 0;
 }
+
+.streamel-cv-menu-text {
+    flex-shrink: 1;
+    z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* Video */
 @media screen and (min-aspect-ratio: 5/4) {

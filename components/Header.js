@@ -2,7 +2,6 @@ var React = require('react');
 var NavLink = require('fluxible-router').NavLink;
 var NavigateAction = require('fluxible-router').navigateAction;
 var CircleButton = require('./oui/CircleButton');
-var SearchBar = require('./srp/SearchBar');
 
 var Header = React.createClass({
     render: function() {
@@ -13,15 +12,6 @@ var Header = React.createClass({
                         <img src="/public/images/logo.png" />
                     </NavLink>
                 </div>
-                {/*<div className="streamel-header-item streamel-header-item-searchbar">
-                    <SearchBar className="searchBar" />
-                </div>
-                <nav className="streamel-header-item">
-                    <CircleButton action={NavigateAction} payload={{method:"GET", url:"/resume"}} actionId="NavigateBlog">
-                        Resume
-                    </CircleButton>
-                    <span className="clear"></span>
-                </nav>*/}
             </header>
         );
     }
