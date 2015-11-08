@@ -8,26 +8,14 @@ var Home = React.createClass({
     render: function() {
         return (
             <div>
+                <div className="streamel-home-banner"></div>
                 <h1 className="center-sizing padding">Recommended Videos</h1>
                 {this.props.recommended.map(function(result) { return (
                     <ContentView
                         state="menu"
                         content={result} />
                 )})}
-                <ContentView state="menu" content={this.props.recommended[0]} />
-                <ContentView state="menu" content={this.props.recommended[0]} />
-                <ContentView state="menu" content={this.props.recommended[0]} />
-                <ContentView state="menu" content={this.props.recommended[0]} />
-                <ContentView state="menu" content={this.props.recommended[0]} />
-                <ContentView state="menu" content={this.props.recommended[0]} />
-                <ContentView state="menu" content={this.props.recommended[0]} />
-                <ContentView state="menu" content={this.props.recommended[0]} />
-                <ContentView state="menu" content={this.props.recommended[0]} />
-                <ContentView state="menu" content={this.props.recommended[0]} />
-                <ContentView state="menu" content={this.props.recommended[0]} />
-                <ContentView state="menu" content={this.props.recommended[0]} />
-                <ContentView state="menu" content={this.props.recommended[0]} />
-                <ContentView state="menu" content={this.props.recommended[0]} />
+
             </div>
         );
     }

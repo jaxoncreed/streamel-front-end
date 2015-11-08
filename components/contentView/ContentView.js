@@ -19,7 +19,8 @@ var ContentView = React.createClass({
                     title={this.props.content.name} 
                     description={this.props.content.description} 
                     poster={this.props.content.film.poster}
-                    thumbnail={this.props.content.film.thumbnail} />
+                    thumbnail={this.props.content.film.thumbnail}
+                    id={this.props.content.film.id} />
             </div>
         );
     }
