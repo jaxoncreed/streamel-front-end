@@ -14,6 +14,20 @@ var Home = React.createClass({
                         state="menu"
                         content={result} />
                 )})}
+                <ContentView state="menu" content={this.props.recommended[0]} />
+                <ContentView state="menu" content={this.props.recommended[0]} />
+                <ContentView state="menu" content={this.props.recommended[0]} />
+                <ContentView state="menu" content={this.props.recommended[0]} />
+                <ContentView state="menu" content={this.props.recommended[0]} />
+                <ContentView state="menu" content={this.props.recommended[0]} />
+                <ContentView state="menu" content={this.props.recommended[0]} />
+                <ContentView state="menu" content={this.props.recommended[0]} />
+                <ContentView state="menu" content={this.props.recommended[0]} />
+                <ContentView state="menu" content={this.props.recommended[0]} />
+                <ContentView state="menu" content={this.props.recommended[0]} />
+                <ContentView state="menu" content={this.props.recommended[0]} />
+                <ContentView state="menu" content={this.props.recommended[0]} />
+                <ContentView state="menu" content={this.props.recommended[0]} />
             </div>
         );
     }

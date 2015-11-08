@@ -13,13 +13,7 @@ var ContentView = React.createClass({
         return (
             <div className="streamel-cv-menu">
                 <div className="streamel-cv-menu-content">
-                    <div className="streamel-cv-menu-background" style={{backgroundImage: 'url(' + this.props.thumbnail + ')'}}></div>
-                    <div className="streamel-cv-menu-background-overlay"></div>
-                    <div className="streamel-cv-menu-poster" style={{backgroundImage: 'url(' + this.props.poster + ')'}}></div>
-                    <div className="streamel-cv-menu-text">
-                        <h1>{this.props.title}</h1>
-                        <p>{this.props.description}</p>
-                    </div>
+                    <div className="streamel-cv-menu-background"></div>
                 </div>
             </div>
         );

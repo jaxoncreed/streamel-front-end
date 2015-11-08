@@ -96,10 +96,6 @@ h1 {
 
 /* ContentView Menu */
 
-.streamel-cv-container {
-    position: relative;
-}
-
 .streamel-cv-menu {
     position: relative;
     background-color: #FFF;
@@ -114,60 +110,20 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    z-index: 0;
     overflow: hidden;
+    justify-content:center;
+    align-items:center;
 }
-/*.streamel-cv-menu-content:before {
-    background-image: url("http://lorempixel.com/output/abstract-q-c-640-480-4.jpg");
-    transform: translateZ(-1px) scale(2);
-    z-index:5;
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left:0;
-    right:0;
-}*/
 
 .streamel-cv-menu-background {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+    height: 100vh;
+    width: 100%;
     background-position: center center;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 0;
-    transform: translateZ(-1px);
-}
-
-.streamel-cv-menu-background-overlay {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1.0), rgba(255, 255, 255, 0.85), rgba(255,255,255, 0.85), rgba(255,255,255,0.85), rgba(255,255,255,1.0)); 
-    z-index: 1;
-}
-
-.streamel-cv-menu-poster {
-    background-color: red;
-    height: 230px;
-    margin: 10px;
-    width: 152px;
-    z-index: 2;
-    background-size: cover;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    margin-right: 20px;
-    flex-shrink: 0;
-}
-
-.streamel-cv-menu-text {
-    flex-shrink: 1;
-    z-index: 2;
+    background-image: url("https://i.ytimg.com/vi/mNFx28NGLfI/maxresdefault.jpg");
+    transform: translateZ(-1px) scale(2);
+    z-index:0;
 }
 
 
