@@ -22,6 +22,9 @@ body {
 h1 {
     font-weight: 300;
 }
+h2 {
+    font-weight: 300;
+}
 .no-link:link, .no-link:visited, .no-link:hover, .no-link:active {
     text-decoration: none;
     color: inherit;
@@ -121,6 +124,7 @@ h1 {
     margin-right: auto;
     overflow: hidden;
     display: flex;
+    align-items: center;
     padding-right: 30px;
     padding-left: 30px;
 }
@@ -138,9 +142,10 @@ h1 {
 }
 
 .streamel-cv-menu-background-image {
-    width: 100%;
+    width: 1200px;
     transform: translateZ(-0.5px) scale(1.5);
     z-index:0;
+    flex-shrink: 0;
 }
 
 .streamel-cv-menu-background-overlay {
@@ -151,29 +156,64 @@ h1 {
     right: 0px;
     background: linear-gradient(to right, rgba(99,142,240, 1.0), rgba(99,142,240, 0.75), rgba(99,142,240, 0.75), rgba(99,142,240, 0.75), rgba(99,142,240, 1.0)); 
     z-index: 1;
+    transform: translateZ(0);
+}
+.streamel-cv-menu-background-overlay:hover {
+    background: linear-gradient(to right, rgba(99,142,240, 1.0), rgba(99,142,240, 0.85), rgba(99,142,240, 0.85), rgba(99,142,240, 0.85), rgba(99,142,240, 1.0)); 
 }
 
 .streamel-cv-menu-poster {
     height: 230px;
-    margin: 10px;
     width: 152px;
     z-index: 2;
     background-size: cover;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    margin-right: 20px;
+    margin-right: 30px;
     flex-shrink: 0;
+    pointer-events: none;
+    transform: translateZ(0);
 }
 
 .streamel-cv-menu-text {
     flex-shrink: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    height: 100%;
     z-index: 2;
     color: #FFF;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+    pointer-events: none;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transform: translateZ(0);
 }
 
+@media (min-width: 1200px) {
 
-
+}
+@media (max-width: 1199px) and (min-width: 600px) {
+    .streamel-cv-menu-background-overlay {
+        background: rgba(99,142,240, 0.75);
+    }
+    .streamel-cv-menu-background-overlay:hover {
+        background: rgba(99,142,240, 0.85);
+    }
+}
+@media (max-width: 599px) {
+    .streamel-cv-menu-poster {
+        height: 154px;
+        width: 100px;
+        border-radius: 5px;
+        margin-right: 20px;
+    }
+    .streamel-cv-menu-text p {
+        display: none;
+    }
+    .streamel-cv-menu-text {
+        height: auto;
+    }
+}
 
 
 

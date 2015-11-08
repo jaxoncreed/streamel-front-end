@@ -22,7 +22,7 @@ var ContentView = React.createClass({
                         <div className="streamel-cv-menu-background-overlay"></div>
                         <div className="streamel-cv-menu-poster" style={{backgroundImage: 'url(' + this.props.poster + ')'}}></div>
                         <div className="streamel-cv-menu-text">
-                            <h1>{this.props.title}</h1>
+                            <h2>{this.props.title}</h2>
                             <p>{this.props.description}</p>
                         </div>
                     </div>
