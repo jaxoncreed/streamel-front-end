@@ -14,5 +14,12 @@ module.exports = {
         title: 'Watch',
         handler: require('../components/watch/Watch'),
         action: require('../actions/watch/getSeries')
+    },
+    about: {
+        path: '/about',
+        method: 'get',
+        page: 'about',
+        title: 'About Streamel',
+        handler: require('../components/about/About')
     }
 };

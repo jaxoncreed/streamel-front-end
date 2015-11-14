@@ -9,13 +9,15 @@ var Home = React.createClass({
         return (
             <div>
                 <div className="streamel-home-banner"></div>
-                <h1 className="center-sizing padding">Recommended Videos</h1>
-                {this.props.recommended.map(function(result) { return (
-                    <ContentView
-                        state="menu"
-                        content={result} />
-                )})}
-
+                <div className="streamel-home-spacer"></div>
+                <div className="streamel-home-content">
+                    <h1 className="center-sizing padding">Recommended Videos</h1>
+                    {this.props.recommended.map(function(result) { return (
+                        <ContentView
+                            state="menu"
+                            content={result} />
+                    )})}
+                </div>
             </div>
         );
     }

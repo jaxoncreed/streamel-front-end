@@ -9,7 +9,7 @@ var Watch = React.createClass({
         if (this.props.video) {
             content = (
                 <div>
-                    <VideoPlayer video={this.props.video.video}/>
+                    <VideoPlayer video={this.props.video}/>
                     <div className="center-sizing padding">
                         <h1>{this.props.video.meta.name}</h1>
                         <p>{this.props.video.meta.description}</p>

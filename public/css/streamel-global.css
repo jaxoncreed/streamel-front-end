@@ -1,17 +1,21 @@
+/*
+#638EF0
+*/
+
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,700,400);
 
 html {
     height: 100%; 
-    margin: 0px; 
-    padding: 0px;
+    margin: 0; 
+    padding: 0;
     overflow: hidden;
 }
 body {
     height: 100%;
-    margin: 0px;
-    padding: 0px;
-    background-color: #111;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF;
     -webkit-appearance:none;
     font-family: 'Open Sans', sans-serif;
     perspective: 1px;
@@ -31,39 +35,47 @@ h2 {
 }
 .center-sizing {
     position: relative;
-    max-width: 1200px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    box-sizing: border-box;
 }
 .padding {
-    padding: 20px;
+    padding: 10px;
 }
+
 
 .streamel-site-container {
     position: relative;
-    bottom 0px;
-    background-color: #F7F7F7;
+    min-height: 100vh;
 }
 
 /* Header */
 .streamel-header {
     position: relative;
-    background-color: #111;
+    background-color: #FFF;
     height: 70px;
     z-index: 5;
 	display: flex;
-    justify-content: space-between;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-bottom: solid 7px #638EF0;
+}
+.streamel-header-logo {
+    align-self: stretch;
 }
 .streamel-header-item {
+    font-size: 18px;
+    color: #000;
+    margin-right: 30px;
     height: 100%;
+    line-height: 70px;
+    box-sizing: border-box;
+    transition: all 0.1s ease;
+    border-bottom: 0px solid #638EF0;
 }
-.streamel-header .o-circle-button {
-    float: left;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-top: -15px;
+.streamel-header-item:hover {
+    border-bottom: solid 10px #638EF0;
 }
 
 /* Content */
@@ -78,13 +90,14 @@ h2 {
     left: 0px;
     right: 0px;
     bottom: -100px;
+    padding: 20px;
     height: 100px;
-    background-color: #111;
+    vertical-align: middle;
+    background-color: #FFF;
     box-sizing: border-box;
-    padding: 30px;
-    color: #EEE;
-    z-index: 100;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    border-top: solid 7px #638EF0;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Search Bar */
@@ -95,13 +108,29 @@ h2 {
 
 /* Home */
 .streamel-home-banner {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 500px;
+    background-color: #FFF;
+    background-image: url('/public/images/backdrop.png'), url('/public/images/blue.png');
+    background-size: auto 100%, 50% 100%;
+    background-position: center center, right center;
+    background-repeat: no-repeat, no-repeat;
+    transform: translateZ(-1px) scale(2) translateY(-16vh);
+    z-index: 1;
+}
+.streamel-home-spacer {
     height: 300px;
-    background-image: url('/public/images/backdrop.png');
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-position: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.streamel-home-content {
+    position: relative;
+    background-color: #FFF;
+    border-top: solid 7px #638EF0;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    padding-bottom: 1px;
+    z-index: 3;
 }
 
 
@@ -109,26 +138,29 @@ h2 {
 
 .streamel-cv-menu {
     position: relative;
-    background-color: #638EF0;
-    height: 250px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    height: 150px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .streamel-cv-menu-content {
     position: relative;
-    max-width: 1200px;
+    max-width: 800px;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
     display: flex;
     align-items: center;
-    padding-right: 30px;
-    padding-left: 30px;
+    padding-right: 5px;
+    padding-left: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-bottom: solid 7px #638EF0;
+    transition: all 0.1s ease;
 }
-
+.streamel-cv-menu-content:hover {
+    border-bottom: solid 14px #638EF0;
+}
 .streamel-cv-menu-background {
     position: absolute;
     top: 0;
@@ -140,7 +172,6 @@ h2 {
     justify-content:center;
     align-items:center;
 }
-
 .streamel-cv-menu-background-image {
     width: 1200px;
     transform: translateZ(-0.5px) scale(1.5);
@@ -154,22 +185,21 @@ h2 {
     bottom: 0px;
     left: 0px;
     right: 0px;
-    background: linear-gradient(to right, rgba(99,142,240, 1.0), rgba(99,142,240, 0.75), rgba(99,142,240, 0.75), rgba(99,142,240, 0.75), rgba(99,142,240, 1.0)); 
+    background-color: rgba(0,0,0, 0.75);
     z-index: 1;
     transform: translateZ(0);
+    transition: all 0.1s ease;
 }
 .streamel-cv-menu-background-overlay:hover {
-    background: linear-gradient(to right, rgba(99,142,240, 1.0), rgba(99,142,240, 0.85), rgba(99,142,240, 0.85), rgba(99,142,240, 0.85), rgba(99,142,240, 1.0)); 
+    background-color: rgba(0,0,0, 0.5);
 }
 
 .streamel-cv-menu-poster {
-    height: 230px;
-    width: 152px;
+    height: 140px;
+    width: 92px;
     z-index: 2;
     background-size: cover;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    margin-right: 30px;
+    margin-right: 10px;
     flex-shrink: 0;
     pointer-events: none;
     transform: translateZ(0);
@@ -184,34 +214,43 @@ h2 {
     z-index: 2;
     color: #FFF;
     pointer-events: none;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     transform: translateZ(0);
 }
-
-@media (min-width: 1200px) {
-
+.streamel-cv-menu-text h2 {
+    margin-top: 0;
+    margin-bottom: 0;
 }
-@media (max-width: 1199px) and (min-width: 600px) {
-    .streamel-cv-menu-background-overlay {
-        background: rgba(99,142,240, 0.75);
-    }
-    .streamel-cv-menu-background-overlay:hover {
-        background: rgba(99,142,240, 0.85);
+
+@media (min-width: 600px) {
+    .below-600 {
+        display: none;
     }
 }
 @media (max-width: 599px) {
-    .streamel-cv-menu-poster {
-        height: 154px;
-        width: 100px;
-        border-radius: 5px;
-        margin-right: 20px;
-    }
-    .streamel-cv-menu-text p {
+    .above-600 {
         display: none;
     }
-    .streamel-cv-menu-text {
-        height: auto;
+
+    .streamel-header {
+        height: 45px;
+    }
+    .streamel-header-item {
+        display: none;
+    }
+    .streamel-home-banner {
+        background-image: url('/public/images/backdropv.png'), url('/public/images/blue.png');
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 12px;
     }
 }
 
@@ -219,20 +258,90 @@ h2 {
 
 
 /* Video */
-@media screen and (min-aspect-ratio: 5/4) {
-    .video-container {
+.streamel-video-container {
+    display: flex;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-bottom: solid 7px #638EF0;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+.streamel-video-player {
+
+}
+.streamel-video-player video {
+
+}
+.streamel-video-info {
+    align-self: stretch;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.streamel-video-info-text {
+    color: #FFF;
+    align-self: stretch;
+}
+
+/* Thin Displays */
+@media screen and (max-aspect-ratio: 5/4) {
+    .streamel-video-container {
+        flex-direction: column;
+    }
+    .streamel-video-player {
         width: 100%;
     }
-    .video-player {
-        height: 70vh;
-        background-color: #333;
+    .streamel-video-player video {
         width: 100%;
-        margin: auto;
+    }
+    .streamel-video-info {
+        height: 200px;
+        flex-direction: row;
+    }
+    .streamel-video-info-image {
+        width: 120px;
+        margin-right: 10px;
     }
 }
-@media screen and (max-aspect-ratio: 5/4) {
-    .video-player {
-        width: 100%;
-        background-color: #333;
+
+/* Thicker Displays */
+@media screen and (min-aspect-ratio: 5/4) and (max-aspect-ratio: 3/2) {
+    .streamel-video-container {
+        flex-direction: column;
+    }
+    .streamel-video-player {
+        height: 70vh;
+    }
+    .streamel-video-player video {
+        height: 100%;
+    }
+    .streamel-video-info {
+        height: 200px;
+        flex-direction: row;
+    }
+    .streamel-video-info-image {
+        width: 120px;
+        margin-right: 10px;
+    }
+}
+/* Thickest Displays */
+@media screen and (min-aspect-ratio: 3/2) {
+    .streamel-video-container {
+        flex-direction: row;
+    }
+    .streamel-video-player {
+        height: 70vh;
+    }
+    .streamel-video-player video {
+        height: 100%;
+    }
+    .streamel-video-info {
+        width: 300px;
+        flex-direction: column;
+    }
+    .streamel-video-info-image {
+        height: 250px;
     }
 }

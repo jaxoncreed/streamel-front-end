@@ -14,7 +14,7 @@ var ContentView = React.createClass({
         var StateComponent = states[this.props.state];
 
         return (
-            <div className="streamel-contentview-container" key="cv">
+            <div key="cv">
                 <StateComponent content={this.props.content} 
                     title={this.props.content.name} 
                     description={this.props.content.description} 
